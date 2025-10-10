@@ -9,5 +9,5 @@
 
 ## Contributers
 - [Alex Fischer](https://github.com/SuperGamer001)
-- [Eli Melnik](https://github.com/ToastedToast00)
+- [ToastedToast00](https://github.com/ToastedToast00)
 - [Logan Nelson](https://github.com/logprogrammer92)
