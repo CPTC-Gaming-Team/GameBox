@@ -12,3 +12,24 @@ footer {
     color: white;
     background: rgb(50, 0, 120);
 }
+
+/* Fix form-floating labels for Identity pages */
+.form-floating > label {
+    color: #6c757d; /* Dark gray */
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: #000; /* Black when focused or filled */
+}
+
+/* Ensure form controls have proper background */
+.form-floating > .form-control {
+    background-color: #fff;
+    color: #000;
+}
+
+.form-floating > .form-control:focus {
+    background-color: #fff;
+    color: #000;
+}
