@@ -15,7 +15,7 @@ Below is a page drawn from [Alex Fischer](https://github.com/SuperGamer001) show
 - Have a clean and large look to make an easy to navigate experience for first time visitors
 
 ## Getting Started
-- [.NET 1.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
+- [.NET 10](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
 - [Visual Studio 2026+](https://visualstudio.microsoft.com/insiders/)
 - [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 
