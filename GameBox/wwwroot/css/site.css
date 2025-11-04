@@ -1,6 +1,7 @@
 body {
     background: rgb(40, 30, 30);
     color: white;
+    min-height: 100vh;
 }
 a {
     color: yellow
@@ -12,6 +13,10 @@ footer {
     color: white;
     background: rgb(50, 0, 120);
     position: relative !important;
+}
+
+.container main {
+    min-height: calc(100vh - 135px);
 }
 
 /* Fix form-floating labels for Identity pages */
