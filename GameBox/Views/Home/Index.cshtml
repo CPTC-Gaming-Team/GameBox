@@ -3,6 +3,131 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4 text-bold">Welcome to <span class="text-gradient-primary">GameBox</span></h1>
+    <p class="lead">Your ultimate game library and collaboration platform</p>
+    <p>GameBox is a game library system that allows game creators to publish their games publicly to the community. They can also save their game to the website privately so only collaborators can see the game project.</p>
+</div>
+
+<hr class="my-5" />
+
+<div class="container">
+    <section class="mb-5">
+        <h2 class="text-center mb-4">What We Have to Offer</h2>
+      <div class="row">
+         <div class="col-md-4 mb-4">
+       <div class="feature-card">
+      <h3>🎮 Publish Your Games</h3>
+    <p>Share your creations with the world! Upload your games and make them available to the entire GameBox community. Support for HTML/JS games with browser-based gameplay.</p>
+    </div>
+            </div>
+  <div class="col-md-4 mb-4">
+    <div class="feature-card">
+       <h3>🎯 Play Community Games</h3>
+      <p>Discover and play games created by other developers. Download games to play locally, or play HTML/JS games directly in your browser.</p>
+   </div>
+            </div>
+        <div class="col-md-4 mb-4">
+                <div class="feature-card">
+        <h3>🤝 Collaborate</h3>
+             <p>Work together on game projects! Add collaborators to your private repositories and build amazing games as a team.</p>
+     </div>
+  </div>
+</div>
+    </section>
+
+    <hr class="my-5" />
+
+    <section class="mb-5">
+        <h2 class="text-center mb-4">How GameBox Works</h2>
+        
+        <div class="row mb-4">
+            <div class="col-md-6">
+       <h3>📂 Creating a Game Repository</h3>
+        <p>Getting started is easy! Once you're logged in, click the <strong>"+ Add Game"</strong> button next to your account icon in the navigation bar. You'll be guided through a quick setup process to create your game repository.</p>
+ <p>After your repository is created, you'll be directed to the file uploading area where you can upload your game files. Enable browser play for HTML/JS games, allowing users to play your game directly on GameBox without downloading!</p>
+  <p class="text-muted"><small>Note: We're working on expanding support to GBScript and Unity games. Special thanks to ToastedToast00 for taking on this exciting challenge!</small></p>
+      </div>
+ <div class="col-md-6">
+           <h3>📊 Your Personalized Feed</h3>
+   <p>Once you're logged in, your home page transforms into a person "Hello!!" alized feed, similar to GitHub's experience. You'll see:</p>
+     <ul>
+          <li><strong>Popular Games</strong> - Trending games in the community</li>
+<li><strong>New Updates</strong> - Latest releases from games you've starred</li>
+       <li><strong>Recommended Games</strong> - Personalized suggestions based on your interests</li>
+      </ul>
+                <p>The more you use GameBox, the better we get at recommending games you'll love!</p>
+</div>
+    </div>
+
+      <div class="row mb-4">
+  <div class="col-md-6">
+      <h3>🎲 Game Repositories</h3>
+    <p>Each game has its own repository page, similar to npm packages, featuring multiple tabs:</p>
+         <ul>
+ <li><strong>README</strong> - Game description, instructions, and information</li>
+              <li><strong>Code</strong> - Browse the game's files and structure</li>
+        <li><strong>Update Version</strong> - Manage releases and updates</li>
+           <li>And more!</li>
+           </ul>
+ <p>Public repositories are visible to everyone, while private repositories are only accessible to collaborators.</p>
+       
+             <h4 class="mt-4">Interact with Games</h4>
+    <p><strong>⭐ Star Icon</strong> - Like a game! Starring shows your support and helps you keep track of games you love. You'll receive updates in your feed when starred games are updated.</p>
+        <p><strong>👁️ Eye Icon</strong> - Watch a game! Get email notifications when updates are released for games you're watching.</p>
+            </div>
+        <div class="col-md-6">
+       <h3>👤 User Profiles</h3>
+    <p>Every creator has a profile showcasing:</p>
+      <ul>
+       <li><strong>Avatar & Name</strong> - Personal identity on GameBox</li>
+       <li><strong>Created Games</strong> - Games they've published</li>
+         <li><strong>Collaborations</strong> - Games they're working on with others</li>
+   <li><strong>Game Points</strong> - Total stars accumulated across all their games</li>
+    </ul>
+          <p>Game Points represent the total number of stars a user has received from all games they've contributed to, whether as creator or collaborator. It's a measure of their impact on the community!</p>
+    
+      <h4 class="mt-4">Follow Creators</h4>
+      <p><strong>⭐ Star Icon</strong> - Follow users to get updates about their new games and projects in your feed. All notifications appear in your feed by default, with optional email notifications available in your settings.</p>
+         </div>
+    </div>
+
+        <div class="row mb-4">
+            <div class="col-md-12">
+        <h3>📚 The Library</h3>
+                <p>Explore the entire GameBox collection in the Library tab! Discover games through multiple sorting options:</p>
+          <div class="row">
+       <div class="col-md-6">
+  <ul>
+            <li><strong>Most Popular</strong> - Games with the most stars</li>
+        <li><strong>Most Popular NEW Games</strong> - Recently released trending games</li>
+      <li><strong>Most Downloads</strong> - The most downloaded games</li>
+              </ul>
+          </div>
+            <div class="col-md-6">
+<ul>
+           <li><strong>A-Z by Title</strong> - Browse alphabetically</li>
+   <li><strong>Z-A by Title</strong> - Reverse alphabetical order</li>
+             <li><strong>Search</strong> - Find specific games quickly</li>
+           </ul>
+         </div>
+    </div>
+     </div>
+        </div>
+    </section>
+
+ <hr class="my-5" />
+
+    <section class="text-center mb-5">
+        <h2 class="mb-4">Ready to Get Started?</h2>
+        <p class="lead">Join the GameBox community today and start sharing your games with the world!</p>
+        <div class="mt-4">
+    <a href="/Identity/Account/Register" class="btn btn-primary btn-lg me-3">Create Account</a>
+  <a href="/Identity/Account/Login" class="btn btn-outline-secondary btn-lg">Sign In</a>
+      </div>
+    </section>
+
+    <section class="text-center mb-5">
+        <h3>Important Note</h3>
+        <p>For security reasons, browser-based games cannot execute server-side code or use WebSockets. Games must be client-side only (HTML/CSS/JavaScript).</p>
+    </section>
 </div>
