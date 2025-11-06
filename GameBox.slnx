@@ -3,4 +3,5 @@
     <File Path="README.md" />
   </Folder>
   <Project Path="GameBox/GameBox.csproj" />
+  <Project Path="Tests/GameBox.Tests/GameBox.Tests.csproj" />
 </Solution>
