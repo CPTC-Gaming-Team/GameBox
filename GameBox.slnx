@@ -2,5 +2,6 @@
   <Folder Name="/Solution Items/">
     <File Path="README.md" />
   </Folder>
+  <Project Path="GameBox.Tests/GameBox.Tests.csproj" Id="f1e8fd37-1b5f-4708-a0e7-fba9817357c6" />
   <Project Path="GameBox/GameBox.csproj" />
 </Solution>
