@@ -19,6 +19,50 @@ footer {
     min-height: calc(100vh - 135px);
 }
 
+/* User dropdown menu */
+.user-menu {
+    position: relative;
+}
+
+.user-greeting {
+    cursor: pointer;
+}
+
+#user-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(50, 0, 120, 0.95);
+    border: 1px solid rgba(255, 255, 0, 0.3);
+    border-radius: 5px;
+    padding: 0.5rem;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.user-menu:hover #user-dropdown {
+    display: block;
+}
+
+#user-dropdown a,
+#user-dropdown button,
+#user-dropdown div{
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+#user-dropdown a:hover,
+#user-dropdown button:hover,
+#user-dropdown div:hover{
+    background: rgba(255, 100, 100, 0.5);
+    border-radius: 3px;
+}
+
 /* Fix form-floating labels for Identity pages */
 .form-floating > label {
     color: #6c757d; /* Dark gray */

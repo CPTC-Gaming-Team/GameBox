@@ -10,13 +10,19 @@
     <li class="nav-item">
         <a id="add-game" class="nav-link text-light" asp-controller="GameModels" asp-action="Create" title="Add A Game">+ Add Game</a>
     </li>
-    <li class="nav-item">
-        <a id="manage" class="nav-link text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
-    </li>
-    <li class="nav-item">
-        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button id="logout" type="submit" class="nav-link btn btn-link text-light border-0">Logout</button>
-        </form>
+    <li class="nav-item user-menu">
+        <div class="nav-link text-light">
+            <span class="user-greeting">Hello @UserManager.GetUserName(User)!</span>
+            <div id="user-dropdown">
+			    <a id="manage" class="nav-link text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Settings</a>
+
+                <div class="nav-link text-light" onclick="alert(`This feature is still in the works. Please check back later.`)">My Games</div>
+		
+                <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button id="logout" type="submit" class="nav-link btn btn-link text-light border-0">Logout</button>
+                </form>
+            </div>
+        </div>
     </li>
 }
 else
