@@ -8,10 +8,10 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item">
-        <a id="add-game" class="nav-link text-light" asp-controller="GameModels" asp-action="Create" title="Add A Game">+ Add Game</a>
+         <a id="add-game" class="nav-link text-light nav-btn-borders" asp-controller="GameModels" asp-action="Create" title="Add A Game">+ Add Game</a>
     </li>
     <li class="nav-item user-menu">
-        <div class="nav-link text-light">
+        <div class="nav-link text-light nav-btn-borders">
             <span class="user-greeting">Hello @UserManager.GetUserName(User)!</span>
             <div id="user-dropdown">
 			    <a id="manage" class="nav-link text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Settings</a>

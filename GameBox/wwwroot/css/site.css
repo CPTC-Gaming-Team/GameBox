@@ -41,7 +41,7 @@ footer {
     z-index: 1000;
 }
 
-.user-menu:hover #user-dropdown {
+#user-dropdown.show {
     display: block;
 }
 
@@ -61,6 +61,15 @@ footer {
 #user-dropdown div:hover{
     background: rgba(255, 100, 100, 0.5);
     border-radius: 3px;
+}
+
+.nav-btn-borders {
+    border: 3px rgba(60, 60, 60, 0.3) solid;
+    border-radius: 15px;
+    margin-left: 5px;
+}
+.nav-btn-borders:hover {
+    background: rgba(15, 15, 15, 0.3);
 }
 
 /* Fix form-floating labels for Identity pages */
