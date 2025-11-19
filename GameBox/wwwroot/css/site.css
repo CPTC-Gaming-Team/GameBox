@@ -500,3 +500,150 @@ input[type="number"].form-control::-webkit-outer-spin-button {
     transform: translateX(5px);
     opacity: 0.7;
 }
+
+/* ====================================== */
+/* EDIT FORM SPECIFIC STYLES */
+/* ====================================== */
+
+.game-edit-form .form-header-icon {
+    background: linear-gradient(135deg, #4CAF50, #2196F3);
+}
+
+/* ====================================== */
+/* DELETE FORM SPECIFIC STYLES */
+/* ====================================== */
+
+.game-delete-form {
+    border-color: rgba(255, 68, 68, 0.5);
+}
+
+.game-delete-form:hover {
+    border-color: rgba(255, 68, 68, 0.7);
+    box-shadow: 0 15px 40px rgba(255, 68, 68, 0.3);
+}
+
+.game-delete-form .form-header-icon.delete-icon {
+    background: linear-gradient(135deg, #ff4444, #cc0000);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 5px 20px rgba(255, 68, 68, 0.5);
+    }
+    50% {
+        box-shadow: 0 5px 30px rgba(255, 68, 68, 0.8);
+    }
+}
+
+.game-delete-form h2.text-danger {
+    color: #ff4444 !important;
+    text-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
+}
+
+.game-delete-form .lead.text-danger {
+    color: #ff6666 !important;
+    font-weight: 600;
+    text-shadow: 0 0 5px rgba(255, 68, 68, 0.3);
+}
+
+/* Game Details Display */
+.game-details-display {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 0, 0.2);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.detail-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-row:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.detail-label {
+    color: yellow;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-value {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    border-left: 3px solid yellow;
+    word-wrap: break-word;
+}
+
+/* Delete Button Styling */
+.delete-confirm-btn {
+    background: linear-gradient(90deg, #ff4444, #cc0000) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: bold !important;
+    padding: 1rem 2rem !important;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(255, 68, 68, 0.4);
+    font-size: 1.125rem;
+}
+
+.delete-confirm-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 68, 68, 0.6);
+    background: linear-gradient(90deg, #ff5555, #dd0000) !important;
+}
+
+.delete-confirm-btn:active {
+    transform: translateY(0);
+}
+
+/* Cancel Link Styling */
+.cancel-link {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.cancel-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive adjustments for delete form */
+@media (max-width: 768px) {
+    .game-details-display {
+        padding: 1rem;
+    }
+    
+    .detail-value {
+        font-size: 1rem;
+    }
+}

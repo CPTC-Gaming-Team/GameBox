@@ -1,42 +1,67 @@
 ﻿@model GameBox.Models.GameModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Game";
 }
 
-<h1>Edit</h1>
-
-<h4>GameModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Rating" class="control-label"></label>
-                <input asp-for="Rating" class="form-control" />
-                <span asp-validation-for="Rating" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+<div class="text-center mb-4">
+    <h1 class="display-4 text-gradient-primary text-bold">Edit Game</h1>
+    <p class="lead">Update your game details</p>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+        <div class="game-form-container game-creator-form game-edit-form">
+            <div class="form-header-icon">
+                <span class="icon-badge">✏️</span>
+            </div>
+            <h2 class="text-center mb-4">Edit Game Details</h2>
+            <hr />
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">
+                        <span class="label-icon">📝</span> Game Name
+                    </label>
+                    <input asp-for="Name" class="form-control" placeholder="Enter an awesome game title..." />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label">
+                        <span class="label-icon">📖</span> Description
+                    </label>
+                    <textarea asp-for="Description" class="form-control" rows="5" placeholder="Describe your game... What makes it unique and fun?"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <!-- This is going to be taken out later -->
+                <div class="form-group" style="display: none"> 
+                    <label asp-for="Rating" class="control-label">
+                        <span class="label-icon">⭐</span> Rating
+                    </label>
+                    <div class="rating-input-wrapper">
+                        <input asp-for="Rating" class="form-control rating-input" type="number" min="0" max="10" step="1" placeholder="0-10" />
+                        <span class="rating-display">/ 10</span>
+                    </div>
+                    <small class="form-text">Rate your game from 0 to 10</small>
+                    <span asp-validation-for="Rating" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group mt-4">
+                    <input type="submit" value="💾 Save Changes" class="btn btn-primary w-100 btn-lg" />
+                </div>
+            </form>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a asp-action="Index" class="back-link">
+                <span class="back-arrow">←</span> Back to Game List
+            </a>
+        </div>
+    </div>
 </div>
 
 @section Scripts {
