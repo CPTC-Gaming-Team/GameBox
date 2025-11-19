@@ -469,10 +469,6 @@ div > a[asp-action="Index"] {
     transform: scale(1.02);
 }
 
-/* Hover effect on form container */
-.game-creator-form:hover {
-    transform: translateY(-5px);
-}
 
 /* Success State Animation */
 @keyframes successPulse {
