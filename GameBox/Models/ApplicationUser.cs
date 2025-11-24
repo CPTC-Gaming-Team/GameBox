@@ -6,12 +6,12 @@ namespace GameBox.Models
     public class ApplicationUser : IdentityUser
     {
         // user who follow me
-        public ICollection<ApplicationUser> Followers { get; set; } = new List<ApplicationUser>();
+        public ICollection<UserFollower> Followers { get; set; } = new List<UserFollower>();
 
         // user who I follow
-        public ICollection<ApplicationUser> Following { get; set; } = new List<ApplicationUser>();
+        public ICollection<UserFollower> Following { get; set; } = new List<UserFollower>();
 
         // games I watch
-        public ICollection<GameModel> WatchedGames { get; set; } = new List<GameModel>();
+        public ICollection<GameWatcher> WatchedGames { get; set; } = new List<GameWatcher>();
     }
 }
