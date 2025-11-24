@@ -60,8 +60,8 @@ namespace GameBox.Data
             builder.Entity<GameModel>()
                 .HasOne(g => g.Uploader)
                 .WithMany()
-                .HasForeignKey(g => g.UploaderID)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey(g => g.UploaderId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
