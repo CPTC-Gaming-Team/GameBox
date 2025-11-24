@@ -19,7 +19,7 @@ namespace GameBox.Models
         public int? Rating { get; set; }
 
         //Who uploaded this game
-        public string UploaderID { get; set; } = string.Empty;
+        public string? UploaderID { get; set; } = string.Empty;
         public ApplicationUser? Uploader { get; set; }
 
         //Watchers

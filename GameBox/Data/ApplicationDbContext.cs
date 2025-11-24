@@ -55,6 +55,13 @@ namespace GameBox.Data
                 .HasOne(gw => gw.User)
                 .WithMany(u => u.WatchedGames)
                 .HasForeignKey(gw => gw.UserId);
+
+            //Prevent cascade delete issues to avoid multiple cascade paths error
+            builder.Entity<GameModel>()
+                .HasOne(g => g.Uploader)
+                .WithMany()
+                .HasForeignKey(g => g.UploaderID)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
