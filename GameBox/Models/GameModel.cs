@@ -17,5 +17,12 @@ namespace GameBox.Models
 
         [Range(1, 10, ErrorMessage = "Ratings must be between 1 and 10")]
         public int? Rating { get; set; }
+
+        //Who uploaded this game
+        public string UploaderID { get; set; } = string.Empty;
+        public ApplicationUser? Uploader { get; set; }
+
+        //Watchers
+        public ICollection<GameWatcher> Watchers { get; set; } = new List<GameWatcher>();
     }
 }
