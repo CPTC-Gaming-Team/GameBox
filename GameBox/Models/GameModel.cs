@@ -16,6 +16,6 @@ namespace GameBox.Models
         public required string Description { get; set; } = string.Empty;
 
         [Range(1, 10, ErrorMessage = "Ratings must be between 1 and 10")]
-        public int Rating { get; set; }
+        public int? Rating { get; set; }
     }
 }
