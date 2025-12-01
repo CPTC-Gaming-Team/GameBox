@@ -35,19 +35,6 @@
                     <textarea asp-for="Description" class="form-control" rows="5" placeholder="Describe your game... What makes it unique and fun?"></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
-
-                <!-- This is going to be taken out later -->
-                <div class="form-group" style="display: none"> 
-                    <label asp-for="Rating" class="control-label">
-                        <span class="label-icon">⭐</span> Rating
-                    </label>
-                    <div class="rating-input-wrapper">
-                        <input asp-for="Rating" class="form-control rating-input" type="number" min="0" max="10" step="1" placeholder="0-10" value="5" />
-                        <span class="rating-display">/ 10</span>
-                    </div>
-                    <small class="form-text">Rate your game from 0 to 10</small>
-                    <span asp-validation-for="Rating" class="text-danger"></span>
-                </div>
                 
                 <div class="form-group mt-4">
                     <input type="submit" value="🚀 Create Game" class="btn btn-primary w-100 btn-lg" />
