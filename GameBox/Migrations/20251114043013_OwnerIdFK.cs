@@ -14,8 +14,8 @@ namespace GameBox.Migrations
                 name: "OwnerId",
                 table: "GameModels",
                 type: "nvarchar(max)",
-                nullable: false,
-                defaultValue: "");
+                nullable: true
+                );
         }
 
         /// <inheritdoc />

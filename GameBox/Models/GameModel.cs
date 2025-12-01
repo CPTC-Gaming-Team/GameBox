@@ -22,9 +22,7 @@ namespace GameBox.Models
         public int? Rating { get; set; }
 
         [ForeignKey("ApplicationUser")]
-        public required string CreatorId { get; set; }
-        public required ApplicationUser Creator { get; set; }
-
+        public string? OwnerId { get; set; }
     }
 }
 

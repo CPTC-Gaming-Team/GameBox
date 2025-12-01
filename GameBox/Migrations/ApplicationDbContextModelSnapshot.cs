@@ -117,7 +117,10 @@ namespace GameBox.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("Rating")
+                    b.Property<string>("OwnerId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Rating")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
