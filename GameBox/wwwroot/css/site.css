@@ -696,3 +696,207 @@ input[type="number"].form-control::-webkit-outer-spin-button {
         font-size: 1rem;
     }
 }
+}
+
+/* Game Inventory Styling */
+.game-inventory-container {
+    padding: 2rem 0;
+}
+
+.inventory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.inventory-header h1 {
+    color: yellow;
+    font-weight: bold;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.game-card {
+    background: rgba(60, 50, 50, 0.8);
+    border: 2px solid rgba(255, 255, 0, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.game-card:hover {
+    border-color: rgba(255, 255, 0, 0.6);
+    box-shadow: 0 12px 30px rgba(255, 255, 0, 0.2);
+    background: rgba(70, 60, 60, 0.9);
+}
+
+.game-card .card-header {
+    background: linear-gradient(135deg, rgba(255, 255, 0, 0.1), rgba(178, 0, 255, 0.1));
+    border-bottom: 1px solid rgba(255, 255, 0, 0.2);
+    padding: 1rem;
+}
+
+.game-card .game-title {
+    color: #ffeb3b;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.game-card .card-body {
+    flex: 1;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card .game-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.game-card .game-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 0, 0.2);
+}
+
+.game-card .rating-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.game-card .rating-value {
+    color: #ffeb3b;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.game-card .card-actions {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 0, 0.1);
+}
+
+.game-card .card-actions a {
+    flex: 1;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.game-card .btn-info {
+    background-color: #0dcaf0;
+    border-color: #0dcaf0;
+    color: #000;
+    font-weight: 600;
+}
+
+.game-card .btn-info:hover {
+    background-color: #31d5f8;
+    border-color: #31d5f8;
+}
+
+.game-card .btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #000;
+    font-weight: 600;
+}
+
+.game-card .btn-warning:hover {
+    background-color: #ffda47;
+    border-color: #ffda47;
+}
+
+.game-card .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+    font-weight: 600;
+}
+
+.game-card .btn-danger:hover {
+    background-color: #e74c5c;
+    border-color: #e74c5c;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: rgba(60, 50, 50, 0.5);
+    border: 2px dashed rgba(255, 255, 0, 0.3);
+    border-radius: 12px;
+}
+
+.empty-state .empty-message {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1rem;
+    }
+
+    .inventory-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .inventory-header h1 {
+        font-size: 2rem;
+    }
+
+    .game-card .game-title {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .inventory-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .game-card .card-actions {
+        flex-direction: column;
+    }
+
+    .game-card .card-actions a {
+        width: 100%;
+    }
+}
