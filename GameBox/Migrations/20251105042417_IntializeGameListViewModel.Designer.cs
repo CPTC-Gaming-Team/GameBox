@@ -106,7 +106,7 @@ namespace GameBox.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CreatorId")
+                    b.Property<string>("OwnerId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
@@ -125,7 +125,7 @@ namespace GameBox.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatorId");
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("GameModels");
                 });
@@ -278,7 +278,7 @@ namespace GameBox.Migrations
                 {
                     b.HasOne("GameBox.Models.ApplicationUser", "Creator")
                         .WithMany()
-                        .HasForeignKey("CreatorId")
+                        .HasForeignKey("OwnerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

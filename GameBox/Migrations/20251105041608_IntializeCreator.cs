@@ -11,21 +11,21 @@ namespace GameBox.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "CreatorId",
+                name: "OwnerId",
                 table: "GameModels",
                 type: "nvarchar(450)",
                 nullable: false,
                 defaultValue: "");
 
             migrationBuilder.CreateIndex(
-                name: "IX_GameModels_CreatorId",
+                name: "IX_GameModels_OwnerId",
                 table: "GameModels",
-                column: "CreatorId");
+                column: "OwnerId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_GameModels_AspNetUsers_CreatorId",
+                name: "FK_GameModels_AspNetUsers_OwnerId",
                 table: "GameModels",
-                column: "CreatorId",
+                column: "OwnerId",
                 principalTable: "AspNetUsers",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
@@ -35,15 +35,15 @@ namespace GameBox.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_GameModels_AspNetUsers_CreatorId",
+                name: "FK_GameModels_AspNetUsers_OwnerId",
                 table: "GameModels");
 
             migrationBuilder.DropIndex(
-                name: "IX_GameModels_CreatorId",
+                name: "IX_GameModels_OwnerId",
                 table: "GameModels");
 
             migrationBuilder.DropColumn(
-                name: "CreatorId",
+                name: "OwnerId",
                 table: "GameModels");
         }
     }
