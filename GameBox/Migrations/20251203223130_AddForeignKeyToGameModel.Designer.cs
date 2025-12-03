@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameBox.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251114042121_NullableRating")]
-    partial class NullableRating
+    [Migration("20251203223130_AddForeignKeyToGameModel")]
+    partial class AddForeignKeyToGameModel
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -116,10 +116,15 @@ namespace GameBox.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<string>("OwnerId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int?>("Rating")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("GameModels");
                 });
@@ -266,6 +271,15 @@ namespace GameBox.Migrations
                     b.HasOne("GameBox.Models.ApplicationUser", null)
                         .WithMany("Followers")
                         .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("GameBox.Models.GameModel", b =>
+                {
+                    b.HasOne("GameBox.Models.ApplicationUser", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId");
+
+                    b.Navigation("Owner");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

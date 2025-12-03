@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GameBox.Data;
 using GameBox.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GameBox.Controllers
 {
     public class GameModelsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public GameModelsController(ApplicationDbContext context)
+        public GameModelsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: GameModels
@@ -44,6 +48,7 @@ namespace GameBox.Controllers
         }
 
         // GET: GameModels/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -51,13 +56,28 @@ namespace GameBox.Controllers
 
         // POST: GameModels/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create([Bind("Id,Name,Description")] GameModel gameModel)
         {
+            // Ensure the user is authenticated
+            if (!User.Identity?.IsAuthenticated ?? true)
+            {
+                return Challenge();
+            }
+
             if (ModelState.IsValid)
             {
+                // Set OwnerId to the currently logged-in user's Id (prevent overposting of OwnerId)
+                var userId = _userManager.GetUserId(User);
+                if (string.IsNullOrEmpty(userId))
+                {
+                    return Forbid();
+                }
+
+                gameModel.OwnerId = userId;
+
                 _context.Add(gameModel);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -83,7 +103,6 @@ namespace GameBox.Controllers
 
         // POST: GameModels/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Rating")] GameModel gameModel)
