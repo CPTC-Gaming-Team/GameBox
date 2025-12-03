@@ -21,8 +21,12 @@ namespace GameBox.Models
         [Range(1, 10, ErrorMessage = "Ratings must be between 1 and 10")]
         public int? Rating { get; set; }
 
+        // Shouldn't this work either way?
         [ForeignKey("ApplicationUser")]
         public string? OwnerId { get; set; }
+
+        [ForeignKey(nameof(OwnerId))]
+        public ApplicationUser? Owner { get; set; }
     }
 }
 

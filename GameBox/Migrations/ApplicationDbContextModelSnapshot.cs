@@ -113,12 +113,17 @@ namespace GameBox.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<string>("OwnerId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int?>("Rating")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("GameModels", (string)null);
+                    b.HasIndex("OwnerId");
+
+                    b.ToTable("GameModels");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -263,6 +268,15 @@ namespace GameBox.Migrations
                     b.HasOne("GameBox.Models.ApplicationUser", null)
                         .WithMany("Followers")
                         .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("GameBox.Models.GameModel", b =>
+                {
+                    b.HasOne("GameBox.Models.ApplicationUser", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId");
+
+                    b.Navigation("Owner");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
